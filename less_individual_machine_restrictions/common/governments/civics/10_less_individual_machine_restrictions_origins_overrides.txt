@@ -19,13 +19,10 @@ origin_scion = {
 		civics = {
 			NOT = { value = civic_pompous_purists }
 		}
-		species_archetype = { NOT = { value = MACHINE } }
 	}
 
 	description = "origin_tooltip_scion_effects"
 	flags = { custom_start_screen }
-
-	blocks_random_machine_empire_generation	= yes
 
 	random_weight = {
 		base = 0
@@ -52,7 +49,6 @@ origin_shoulders_of_giants = {
 				value = ethic_gestalt_consciousness
 			}
 		}
-		species_archetype = { NOT = { value = MACHINE } }
 	}
 
 	description = "origin_tooltips_shoulders_of_giants_effects"
@@ -61,8 +57,6 @@ origin_shoulders_of_giants = {
 
 	traits = {
 	}
-
-	blocks_random_machine_empire_generation	= yes
 
 	random_weight = {
 		base = 5
@@ -82,12 +76,30 @@ origin_machine = {
 	}
 
 	possible = {
-		authority = { value = auth_machine_intelligence }
+		species_archetype = { value = MACHINE }
 		civics = {
+			NOT = { value = civic_machine_servitor }
 			NOR = {
-				value = civic_machine_servitor
+				text = civic_tooltip_not_catalytic
+				value = civic_catalytic_processing
+				value = civic_corporate_catalytic_processing
+				value = civic_hive_catalytic_processing
 				value = civic_machine_catalytic_processing
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
 				value = civic_machine_guided_sapience
+			}
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
+				value = civic_machine_anglers
+				value = civic_corporate_machine_anglers
 			}
 		}
 	}
@@ -128,7 +140,6 @@ origin_toxic_knights = {
 				value = civic_dystopian_society
 			}
 		}
-		species_archetype = { NOT = { value = MACHINE } }
 	}
 
 	description = origin_toxic_knights_effects
@@ -136,7 +147,6 @@ origin_toxic_knights = {
 
 	advanced_start = yes
 	max_once_global = yes
-	blocks_random_machine_empire_generation	= yes
 
 	random_weight = {
 		base = 2
