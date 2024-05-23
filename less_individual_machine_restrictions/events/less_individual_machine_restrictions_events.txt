@@ -1,0 +1,42 @@
+namespace = less_individual_machine_restrictions_events
+
+# triggered by on_game_start
+event = {
+	id = less_individual_machine_restrictions_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_playable_country = {
+			limit = {
+				exists = owner
+				owner = {
+					AND = {
+						has_origin = origin_machine
+						is_individual_machine = yes
+					}
+				}
+			}
+			every_planet_within_border = {
+				limit = {
+					exists = owner
+					is_planet_class = pc_machine
+				}
+				while = {
+					limit = { num_districts = { type = district_generator value > 0 } }
+					remove_district = district_generator
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_generator_uncapped
+					}
+				}
+				while = {
+					limit = { num_districts = { type = district_mining value > 0 } }
+					remove_district = district_mining
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining_uncapped
+					}
+				}
+				add_deposit = d_resource_consolidation_1
+			}
+		}
+	}
+}

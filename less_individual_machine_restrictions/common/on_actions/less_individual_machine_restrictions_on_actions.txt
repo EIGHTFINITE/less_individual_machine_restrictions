@@ -1,0 +1,6 @@
+# fired when the game starts
+on_game_start = {
+	events = {
+		less_individual_machine_restrictions_events.1
+	}
+}
