@@ -8,6 +8,7 @@ d_resource_consolidation_1 = {
 
 	planet_modifier = {
 		job_replicator_add = -1
+		job_roboticist_add = -1
 		planet_max_districts_add = -1
 	}
 
