@@ -1,0 +1,24 @@
+d_resource_consolidation_1 = {
+	is_for_colonizable = yes
+	icon = "d_station_junk"
+	category = deposit_cat_blockers
+	time = 360
+
+	potential = { always = no }
+
+	planet_modifier = {
+		job_replicator_add = -1
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			minerals = 600
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
