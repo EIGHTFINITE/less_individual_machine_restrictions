@@ -17,7 +17,7 @@ ap_machine_worlds = {
 
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
-		has_authority = auth_machine_intelligence
+		is_synthetic_empire = yes
 		NOT = {
 			has_ascension_perk = ap_machine_worlds
 		}
@@ -50,7 +50,7 @@ ap_machine_worlds = {
 ap_mechromancy = {
 	potential = {
 		has_necroids = yes
-		has_authority = auth_machine_intelligence
+		is_synthetic_empire = yes
 		NOT = {
 			has_ascension_perk = ap_mechromancy
 		}
