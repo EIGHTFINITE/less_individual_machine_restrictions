@@ -7,5 +7,5 @@ tags={
 	"Overhaul"
 	"Technologies"
 }
-supported_version="3.12.*"
+supported_version="v3.14.*"
 path="mod/less_individual_machine_restrictions"
