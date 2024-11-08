@@ -1,0 +1,53 @@
+#Subdermal Implants
+tech_subdermal_stimulation = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { biology }
+	prerequisites = { "tech_genome_mapping" }
+	weight = @tier2weight2
+	is_rare = yes
+
+	# unlocks Chemical Bliss living standard
+
+	feature_flags = {
+		bliss_standard
+	}
+
+	potential = {
+		NOR = {
+			has_ethic = ethic_gestalt_consciousness
+			has_civic = civic_dystopian_society
+			is_individual_machine = yes
+		}
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 1.25
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_subdermal_stimulation
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 3
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+	}
+}
