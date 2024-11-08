@@ -1,15 +1,10 @@
 civic_individual_machine_replication = {
 	potential = {
+		species_archetype = {
+			value = MACHINE
+		}
 		authority = { NOT = { value = auth_corporate } }
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-	}
-	possible = {
-		species_archetype = {
-			OR = {
-				value = ROBOT
-				value = MACHINE
-			}
-		}
 	}
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
@@ -22,16 +17,11 @@ civic_individual_machine_replication = {
 
 civic_individual_machine_predictive_analysis = {
 	potential = {
+		species_archetype = {
+			value = MACHINE
+		}
 		authority = { NOT = { value = auth_corporate } }
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-	}
-	possible = {
-		species_archetype = {
-			OR = {
-				value = ROBOT
-				value = MACHINE
-			}
-		}
 	}
 	random_weight = { base = @civic_default_random_weight }
 	ai_weight = {
@@ -46,6 +36,9 @@ civic_individual_machine_predictive_analysis = {
 
 civic_individual_machine_warbots = {
 	potential = {
+		species_archetype = {
+			value = MACHINE
+		}
 		authority = { NOT = { value = auth_corporate } }
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 	}
@@ -53,12 +46,6 @@ civic_individual_machine_warbots = {
 		civics = {
 			NOT = {
 				value = civic_machine_obsessional_directive
-			}
-		}
-		species_archetype = {
-			OR = {
-				value = ROBOT
-				value = MACHINE
 			}
 		}
 	}
