@@ -35,6 +35,105 @@ event = {
 						district = district_mining_uncapped
 					}
 				}
+				if = {
+					limit = { has_deposit = d_decrepit_dwellings }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_decrepit_dwellings
+						}
+						remove_deposit = d_decrepit_dwellings
+					}
+				}
+				if = {
+					limit = { has_deposit = d_mesopotamian_urban_corridor }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_mesopotamian_urban_corridor
+						}
+						remove_deposit = d_mesopotamian_urban_corridor
+					}
+				}
+				if = {
+					limit = { has_deposit = d_boswash_metropolitan_axis }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_boswash_metropolitan_axis
+						}
+						remove_deposit = d_boswash_metropolitan_axis
+					}
+				}
+				if = {
+					limit = { has_deposit = d_mauritanian_security_zone }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_mauritanian_security_zone
+						}
+						remove_deposit = d_mauritanian_security_zone
+					}
+				}
+				if = {
+					limit = { has_deposit = d_great_albertan_crater }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_great_albertan_crater
+						}
+						remove_deposit = d_great_albertan_crater
+					}
+				}
+				if = {
+					limit = { has_deposit = d_scandinavian_reclamation_sector }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_scandinavian_reclamation_sector
+						}
+						remove_deposit = d_scandinavian_reclamation_sector
+					}
+				}
+				if = {
+					limit = { has_deposit = d_saharan_irrigation_project }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_saharan_irrigation_project
+						}
+						remove_deposit = d_saharan_irrigation_project
+					}
+				}
+				if = {
+					limit = { has_deposit = d_pearl_river_agglomerate }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_pearl_river_agglomerate
+						}
+						remove_deposit = d_pearl_river_agglomerate
+					}
+				}
+				if = {
+					limit = { has_deposit = d_great_pacific_garbage_patch }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_great_pacific_garbage_patch
+						}
+						remove_deposit = d_great_pacific_garbage_patch
+					}
+				}
+				if = {
+					limit = { has_deposit = d_failing_infrastructure_earth }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_failing_infrastructure_earth
+						}
+						remove_deposit = d_failing_infrastructure_earth
+					}
+				}
+				if = {
+					limit = { has_deposit = d_forgotten_civilization }
+					every_deposit = {
+						limit = {
+							is_deposit_type = d_forgotten_civilization
+						}
+						remove_deposit = d_forgotten_civilization
+					}
+				}
 				add_deposit = d_resource_consolidation_1
 			}
 		}
