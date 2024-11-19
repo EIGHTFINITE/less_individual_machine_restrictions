@@ -13,10 +13,7 @@ tech_integrated_cybernetics = {
 
 	potential = {
 		OR = {
-			AND = {
-				is_machine_empire = no
-				is_individual_machine = no
-			}
+			is_machine_empire = no
 			has_civic = civic_machine_assimilator
 		}
 	}
