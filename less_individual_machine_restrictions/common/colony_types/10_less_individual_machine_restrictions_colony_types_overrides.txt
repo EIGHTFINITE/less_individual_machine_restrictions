@@ -18,7 +18,7 @@ col_mac = {
 		potential = {
 			exists = owner
 			owner = {
-				is_synthetic_empire = yes
+				is_machine_empire = yes
 				NOT = { has_valid_civic = civic_machine_servitor }
 			}
 			is_planet_class = pc_machine
