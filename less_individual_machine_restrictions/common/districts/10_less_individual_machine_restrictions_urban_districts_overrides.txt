@@ -69,9 +69,10 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
+			exists = owner
 			is_planet_class = pc_machine
 			owner = {
-				is_machine_empire = yes
+				is_synthetic_empire = yes
 				has_ascension_perk = ap_machine_worlds
 			}
 		}
@@ -99,6 +100,157 @@ district_industrial = {
 	inline_script = {
 		script = jobs/industrial_districts_foundry_add
 		AMOUNT = 1
+	}
+
+	#Factory designation
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_factory_designation = yes
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = no
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artisan_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_factory_designation = yes
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = yes
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artificer_add = 2
+		}
+	}
+
+	#Foundry designation
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = yes
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_catalytic_empire = no
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_foundry_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = yes
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_catalytic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_catalytic_technician_add = 2
+		}
+	}
+
+	#Other designation
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = no
+			has_factory_designation = no
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = no
+			has_factory_designation = no
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artificer_add = 1
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = no
+			has_factory_designation = no
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+			job_catalytic_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			has_foundry_designation = no
+			has_factory_designation = no
+			owner = {
+				is_regular_empire = yes
+				is_synthetic_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			job_artificer_add = 1
+			job_catalytic_technician_add = 1
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -138,7 +290,7 @@ district_machine_coordination = {
 	show_on_uncolonized = {
 		exists = from
 		from = {
-			is_machine_empire = yes
+			is_synthetic_empire = yes
 			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 		is_planet_class = pc_machine
@@ -147,7 +299,7 @@ district_machine_coordination = {
 	potential = {
 		exists = owner
 		owner = {
-			is_machine_empire = yes
+			is_synthetic_empire = yes
 			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 		is_planet_class = pc_machine
@@ -180,25 +332,478 @@ district_machine_coordination = {
 
 	planet_modifier = {
 		planet_housing_add = 2
-		job_coordinator_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_planet_class = pc_machine
+			owner = {
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+
+	}
+
+	#Non-spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_regular_empire = yes
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = 2
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_megacorp = yes
+				is_spiritualist = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_spiritualist = no
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_coordinator_add = 2
+		}
+	}
+
+	#Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = no
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		modifier = {
+			job_priest_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = yes
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		modifier = {
+			# Megacorp YES, Death Cult NO.
+			job_preacher_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				has_origin = origin_cybernetic_creed # mutually exclusive with Death Cults
+			}
+		}
+		modifier = {
+			job_haruspex_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_death_cult_empire = yes
+			}
+		}
+		modifier = {
+			# Death Cult YES.
+			job_death_priest_add = 1
+			job_mortal_initiate_add = 1
+		}
+	}
+
+	#Non-spiritualist jobs from machine worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_regular_empire = yes
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = yes
+				is_spiritualist = no
+				is_worker_coop_empire = no
+			}
+		}
+		modifier = {
+			job_manager_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_spiritualist = no
+				is_worker_coop_empire = yes
+			}
+		}
+		modifier = {
+			job_steward_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
 				is_machine_empire = yes
 				has_ascension_perk = ap_machine_worlds
 			}
 		}
-		job_coordinator_add = 2
-		planet_housing_add = 2
+		modifier = {
+			job_coordinator_add = 2
+		}
+	}
+
+	#Spiritualist jobs from machine worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = no
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		modifier = {
+			job_priest_add = 2
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = yes
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		modifier = {
+			# Megacorp YES, Death Cult NO.
+			job_preacher_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				has_origin = origin_cybernetic_creed # mutually exclusive with Death Cults
+			}
+		}
+		modifier = {
+			job_haruspex_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_death_cult_empire = yes
+			}
+		}
+		modifier = {
+			# Death Cult YES.
+			job_death_priest_add = 1
+			job_mortal_initiate_add = 1
+		}
+	}
+
+	#Non-spiritualist jobs from virtuality for IMs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_regular_empire = yes
+				is_megacorp = no
+				is_worker_coop_empire = no
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_megacorp = yes
+				is_spiritualist = no
+				is_worker_coop_empire = no
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_manager_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_spiritualist = no
+				is_worker_coop_empire = yes
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_steward_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
 				is_machine_empire = yes
 				has_tradition = tr_virtuality_4
 			}
@@ -208,10 +813,168 @@ district_machine_coordination = {
 		}
 	}
 
+	#Spiritualist jobs from virtuality for IMs
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = no
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_priest_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = yes
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			# Megacorp YES, Death Cult NO.
+			job_preacher_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_death_cult_empire = yes
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			# Death Cult YES.
+			job_death_priest_add = 0.5
+		}
+	}
+
+	#Non-spiritualist jobs from virtuality + machine worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_regular_empire = yes
+				is_megacorp = no
+				is_worker_coop_empire = no
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = yes
+				is_spiritualist = no
+				is_worker_coop_empire = no
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_manager_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_spiritualist = no
+				is_worker_coop_empire = yes
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_steward_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
 				is_machine_empire = yes
 				has_ascension_perk = ap_machine_worlds
 				has_tradition = tr_virtuality_4
@@ -220,9 +983,225 @@ district_machine_coordination = {
 		modifier = {
 			job_coordinator_add = 1
 		}
+	}
+
+	#Spiritualist jobs from virtuality + machine worlds
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = no
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			job_priest_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_megacorp = yes
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			# Megacorp YES, Death Cult NO.
+			job_preacher_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_synthetic_empire = yes
+				has_ascension_perk = ap_machine_worlds
+				is_death_cult_empire = yes
+				has_active_tradition = tr_virtuality_4
+			}
+		}
+		modifier = {
+			# Death Cult YES.
+			job_death_priest_add = 0.5
+		}
+	}
+
+	#Non-spiritualist description
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_regular_empire = yes
+				is_megacorp = no
+				is_worker_coop_empire = no
+			}
+		}
+		text = job_bureaucrat_effect_desc
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_megacorp = yes
+				is_spiritualist = no
+			}
+		}
+		text = job_manager_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_spiritualist = no
+				is_worker_coop_empire = yes
+			}
+		}
+		text = job_steward_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						is_spiritualist = no
+						has_make_spiritualist_perk = no
+					}
+					AND = {
+						is_machine_empire = yes
+						NOT = { has_valid_civic = civic_machine_servitor }
+					}
+				}
+				is_machine_empire = yes
+			}
+		}
 		text = job_coordinator_effect_desc
+	}
+
+	#Spiritualist description
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = no
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		text = job_priest_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_megacorp = yes
+				is_death_cult_empire = no
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		text = job_preacher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				has_origin = origin_cybernetic_creed # mutually exclusive with Death Cults
+			}
+		}
+		text = job_haruspex_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					is_spiritualist = yes
+					has_make_spiritualist_perk = yes
+				}
+				is_machine_empire = no
+				is_death_cult_empire = yes # mutually exclusive with 'origin_cybernetic_creed'
+			}
+		}
+		text = jobs_death_priest_and_mortal_initiate_effect_desc
 	}
 }
