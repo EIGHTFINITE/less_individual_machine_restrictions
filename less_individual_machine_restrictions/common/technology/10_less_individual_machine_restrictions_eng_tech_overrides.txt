@@ -13,10 +13,7 @@ tech_integrated_cybernetics = {
 
 	potential = {
 		OR = {
-			AND = {
-				is_machine_empire = no
-				is_individual_machine = no
-			}
+			is_machine_empire = no
 			has_civic = civic_machine_assimilator
 		}
 	}
@@ -31,6 +28,15 @@ tech_integrated_cybernetics = {
 		modifier = {
 			factor = 1000
 			has_origin = origin_cybernetic_creed
+		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
 		}
 	}
 }
