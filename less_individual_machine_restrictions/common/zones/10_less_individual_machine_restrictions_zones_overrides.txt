@@ -7,7 +7,7 @@ zone_machine_replication = {
 		is_planet_class = pc_machine
 		exists = owner
 		owner = {
-			is_machine_empire = yes
+			is_synthetic_empire = yes
 			has_ascension_perk = ap_machine_worlds
 		}
 	}
@@ -15,7 +15,7 @@ zone_machine_replication = {
 	unlock = { # planet scope
 		exists = owner
 		owner = {
-			is_machine_empire = yes
+			is_synthetic_empire = yes
 			has_ascension_perk = ap_machine_worlds
 		}
 	}
