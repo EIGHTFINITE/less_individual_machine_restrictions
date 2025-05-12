@@ -164,6 +164,23 @@ triggered_planet_modifier = {
 
 triggered_planet_modifier = {
 	potential = {
+		is_planet_class = pc_machine
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = no
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = $AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
 		uses_district_set = city_world
 		exists = owner
 		owner = {
@@ -252,6 +269,23 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		job_fabricator_add = $AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		is_planet_class = pc_machine
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = yes
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = $AMOUNT$
 	}
 }
 
@@ -351,6 +385,24 @@ triggered_planet_modifier = {
 
 triggered_planet_modifier = {
 	potential = {
+		is_planet_class = pc_machine
+		has_foundry_designation = yes
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = no
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = $AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
 		NOT = { uses_district_set = city_world }
 		has_foundry_designation = yes
 		exists = owner
@@ -379,6 +431,24 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		job_fabricator_add = $AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		is_planet_class = pc_machine
+		has_foundry_designation = yes
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = yes
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = $AMOUNT$
 	}
 }
 
@@ -447,6 +517,24 @@ triggered_planet_modifier = {
 
 triggered_planet_modifier = {
 	potential = {
+		is_planet_class = pc_machine
+		has_factory_designation = yes
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = no
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = -$AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
 		NOT = { uses_district_set = city_world }
 		has_factory_designation = yes
 		exists = owner
@@ -475,5 +563,23 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		job_fabricator_add = -$AMOUNT$
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		is_planet_class = pc_machine
+		has_factory_designation = yes
+		exists = owner
+		owner = {
+			is_machine_empire = no
+			is_synthetic_empire = yes
+			is_catalytic_empire = yes
+			country_uses_consumer_goods = yes
+			has_ascension_perk = ap_machine_worlds
+		}
+	}
+	modifier = {
+		job_foundry_add = -$AMOUNT$
 	}
 }
