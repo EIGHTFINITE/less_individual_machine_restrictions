@@ -1,14 +1,29 @@
+# Medical Care
+tech_basic_health = {
+	cost = 0
+	area = society
+	start_tech = yes
+	tier = 0
+	category = { biology }
+
+	potential = {
+		is_regular_empire = yes
+		is_individual_machine = no
+	}
+}
+
 #Frontier Health
 tech_frontier_health = {
 	cost = @tier1cost2
 	area = society
 	tier = 1
 	category = { biology }
-	prerequisites = { "tech_genome_mapping" }
+	prerequisites = { "tech_basic_health" "tech_genome_mapping" }
 	weight = @tier1weight2
 
 	potential = {
 		is_regular_empire = yes
+		is_individual_machine = no
 	}
 
 	weight_modifier = {
@@ -39,6 +54,7 @@ tech_frontier_hospital = {
 
 	potential = {
 		is_gestalt = no
+		is_individual_machine = no
 	}
 
 	weight_modifier = {
@@ -76,6 +92,7 @@ tech_gene_seed_purification = {
 		NOR = {
 			is_machine_empire = yes
 			is_natural_design_empire = yes
+			is_individual_machine = yes
 		}
 	}
 
@@ -148,6 +165,8 @@ tech_morphogenetic_field_mastery = {
 		NOR = {
 			is_machine_empire = yes
 			is_natural_design_empire = yes
+			is_individual_machine = yes
+			is_wilderness_empire = yes
 		}
 	}
 
@@ -216,9 +235,19 @@ tech_gene_expressions = {
 		}
 	}
 
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_VOCATIONAL_GENES_TITLE"
+			desc = "TECH_UNLOCK_VOCATIONAL_GENES_DESC"
+		}
+	}
+
 	potential = {
 		OR = {
-			is_machine_empire = no
+			NOR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
 			has_civic = civic_machine_assimilator
 			has_civic = civic_machine_servitor
 		}
@@ -276,6 +305,7 @@ tech_subdermal_stimulation = {
 		NOR = {
 			has_ethic = ethic_gestalt_consciousness
 			has_civic = civic_dystopian_society
+			is_individual_machine = yes
 		}
 	}
 
