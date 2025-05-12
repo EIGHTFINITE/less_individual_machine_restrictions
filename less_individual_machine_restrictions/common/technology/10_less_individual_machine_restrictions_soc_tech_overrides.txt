@@ -8,7 +8,12 @@ tech_basic_health = {
 
 	potential = {
 		is_regular_empire = yes
-		is_individual_machine = no
+		OR = {
+			is_individual_machine = no
+			any_owned_species = {
+				is_organic_species = yes
+			}
+		}
 	}
 }
 
@@ -23,7 +28,6 @@ tech_frontier_health = {
 
 	potential = {
 		is_regular_empire = yes
-		is_individual_machine = no
 	}
 
 	weight_modifier = {
@@ -40,6 +44,15 @@ tech_frontier_health = {
 			factor = 2
 			has_country_flag = payback_researching_gene_clinics
 		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
+		}
 	}
 }
 
@@ -54,7 +67,6 @@ tech_frontier_hospital = {
 
 	potential = {
 		is_gestalt = no
-		is_individual_machine = no
 	}
 
 	weight_modifier = {
@@ -74,6 +86,15 @@ tech_frontier_hospital = {
 			factor = 2
 			has_relic = r_pox_sample
 		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
+		}
 	}
 }
 
@@ -92,7 +113,6 @@ tech_gene_seed_purification = {
 		NOR = {
 			is_machine_empire = yes
 			is_natural_design_empire = yes
-			is_individual_machine = yes
 			is_wilderness_empire = yes
 		}
 	}
@@ -136,13 +156,9 @@ tech_gene_seed_purification = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_individual_machine = yes
-		}
-		modifier = {
-			factor = 2
-			AND = {
-				is_individual_machine = yes
+			NOT = {
 				any_owned_species = {
 					is_organic_species = yes
 				}
@@ -166,7 +182,6 @@ tech_morphogenetic_field_mastery = {
 		NOR = {
 			is_machine_empire = yes
 			is_natural_design_empire = yes
-			is_individual_machine = yes
 			is_wilderness_empire = yes
 		}
 	}
@@ -215,6 +230,15 @@ tech_morphogenetic_field_mastery = {
 				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius_2 }
 			}
 		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
+		}
 	}
 }
 
@@ -245,10 +269,7 @@ tech_gene_expressions = {
 
 	potential = {
 		OR = {
-			NOR = {
-				is_machine_empire = yes
-				is_individual_machine = yes
-			}
+			is_machine_empire = no
 			has_civic = civic_machine_assimilator
 			has_civic = civic_machine_servitor
 		}
@@ -280,6 +301,15 @@ tech_gene_expressions = {
 			factor = 2
 			has_relic = r_pox_sample
 		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
+		}
 	}
 
 	ai_weight = {
@@ -306,7 +336,6 @@ tech_subdermal_stimulation = {
 		NOR = {
 			has_ethic = ethic_gestalt_consciousness
 			has_civic = civic_dystopian_society
-			is_individual_machine = yes
 		}
 	}
 
@@ -326,6 +355,15 @@ tech_subdermal_stimulation = {
 		modifier = {
 			factor = 2
 			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 0
+			is_individual_machine = yes
+			NOT = {
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
 		}
 	}
 
