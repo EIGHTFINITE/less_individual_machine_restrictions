@@ -16,7 +16,12 @@ building_medical_1 = {
 		}
 		owner = {
 			is_regular_empire = yes
-			is_individual_machine = no
+			OR = {
+				is_individual_machine = no
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
 			NOT = {
 				has_valid_civic = civic_dystopian_society
 			}
@@ -109,7 +114,12 @@ building_medical_2 = {
 		# check the empire is valid
 		owner = {
 			# rule out gestalts and pre-FTL societies
-			is_individual_machine = no
+			OR = {
+				is_individual_machine = no
+				any_owned_species = {
+					is_organic_species = yes
+				}
+			}
 			OR = {
 				is_regular_empire = yes
 				AND = {
