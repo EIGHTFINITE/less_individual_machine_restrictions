@@ -16,24 +16,15 @@ building_medical_1 = {
 		}
 		owner = {
 			is_regular_empire = yes
-			OR = {
-				is_individual_machine = no
-				any_owned_species = {
-					is_organic_species = yes
-				}
-			}
+			is_individual_machine = no
 			NOT = {
 				has_valid_civic = civic_dystopian_society
 			}
 		}
 		OR = {
-			owner = {
-				NOT = { is_ai = yes }
-			}
-			AND = {
-				NOT = { has_available_jobs = entertainer }
-				NOT = { has_forbidden_jobs = entertainer }
-			}
+			has_planet_flag = ignore_ai_building_limitations
+			owner = { is_ai = no }
+			free_amenities < @amenity_ai_limit
 		}
 		NOT = { has_building = building_low_tech_capital }
 	}
@@ -86,7 +77,7 @@ building_medical_1 = {
 				}
 			}
 		}
-		pop_bonus_workforce_mult = @medical_workforce_mult
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
 	}
 
 	prerequisites = {
@@ -114,12 +105,7 @@ building_medical_2 = {
 		# check the empire is valid
 		owner = {
 			# rule out gestalts and pre-FTL societies
-			OR = {
-				is_individual_machine = no
-				any_owned_species = {
-					is_organic_species = yes
-				}
-			}
+			is_individual_machine = no
 			OR = {
 				is_regular_empire = yes
 				AND = {
@@ -252,7 +238,7 @@ building_medical_2 = {
 				}
 			}
 		}
-		pop_bonus_workforce_mult = @medical_workforce_mult
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
 		mult = 2
 	}
 
